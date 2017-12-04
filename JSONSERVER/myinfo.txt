@@ -1,0 +1,39 @@
+json-server: 快速"伪造"后台接口
+
+1. 环境: 需要在node环境中运行
+
+2. 开始: 新建项目,在项目文件夹中进行如下操作
+
+3. cd ~  找到根目录
+4. sudo cnpm install -g json-server  全局安装json-server
+
+5. npm init --yes  初始化,生成文件夹package.json
+6. cnpm install json-server --save  本地安装json-server
+
+7. package.json中设置scripts
+	"scripts": {
+	    "json:server":"json-server --watch db.json"
+	},
+
+8. 新建db.json文件,在json文件中写入json数据, 保存所有文件
+
+9. cnpm run json:server  运行
+
+10. 在运行结果中找到 Home 下的路径, 拷贝该路径, 在浏览器上运行(运行会较慢)
+ 
+11. 点击users查看结果, 具体执行见 README.md文件
+
+12. 使用 Postman 进行rest请求测试, 实现json数据增删改
+	增: POST 
+	 	设置内容 Headers:key - Content-type;
+	 					Value - application/json
+	 			Body: 写入数据
+	 	send
+	删: DELETE - send
+	改: PATCH 
+	 	设置内容 (同增)
+	  	send 
+
+
+
+
