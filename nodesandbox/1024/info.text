@@ -1,0 +1,62 @@
+课堂代码
+=======index.ejs========contact.ejs=======blog.ejs==================
+
+<% include ../public/nav.ejs %>
+
+
+
+====================blog.ejs========================================
+
+<body>
+	<% include ../public/nav.ejs %>
+	<h1>这是第<%= id %>篇博客</h1>
+	<!-- 
+		<p>
+			<strong>标题: </strong><%= data[0].title %>
+			<strong>内容: </strong><%= data[0].body %>
+			<strong>作者: </strong><%= data[0].author %>
+		</p> 
+	-->
+	<ul>
+		<% data.forEach(function(sbqitem){ %>
+			<li>
+				<strong>标题: </strong><%= sbqitem.title %>
+				<strong>内容: </strong><%= sbqitem.body %>
+				<strong>作者: </strong><%= sbqitem.author %>
+			</li>
+		<% }) %>
+	</ul>
+</body>
+
+
+
+============app.js=================================================
+var express = require("express");
+var app = express();
+
+app.set("view engine","ejs");
+app.use("/assets",express.static('assets'));  
+
+app.get("/",(req,res) => {
+	// res.sendFile(__dirname+"/views/index.ejs");
+	res.render("index");   // 识别ejs
+});
+app.get('/contact',(req,res) => {
+	// res.sendFile(__dirname+"/views/contact.ejs");
+	res.render("contact");
+});
+
+// 路由参数
+app.get('/blogs/:sbqid',(req,res) => {
+	var sbqdata = [
+		{title:"博客1",author:"Henry",body:"this is first blog!"},
+		{title:"博客2",author:"Bucky",body:"this is second blog!"},
+		{title:"博客3",author:"Emily",body:"this is third blog!"}
+	];
+	res.render("blog",{id:req.params.sbqid,data:sbqdata});
+});
+
+app.listen(3000);
+
+
+

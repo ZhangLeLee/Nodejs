@@ -1,0 +1,21 @@
+{
+  "name": "node6",
+  "version": "1.0.0",
+  "description": "study how to use npm in our project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "ll",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
