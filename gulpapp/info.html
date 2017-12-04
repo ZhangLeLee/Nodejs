@@ -1,0 +1,22 @@
+gulp -- gulp是前端的一个自动化的构建工具,与gruntjs相比,无需写一大推繁杂的配置参数,而且gulpjs使用的是nodejs中stream来读取和操作数据，其速度更快。
+
+
+gulp -- 使用
+sudo cnpm install gulp -g   全局安装gulp
+gulp -v(version)  检测是否安装成功
+npm init --yes  初始化gulp,将gulp信息调用出来,生成package.json文件, 方便进行管理
+cnpm install gulp --save    本地安装(全局安装gulp后,需要在项目里单独安装一次)
+cnpm install gulp-copy --save-dev  复制文件
+cnpm install gulp-imagemin --save-dev  压缩图片
+cnpm install gulp-uglify --save-dev  压缩代码
+cnpm install gulp-cass --save-dev  定义cass转css任务
+cnpm install gulp-webserver --save-dev 
+
+
+gruntjs使用
+sudo npm install -g grunt-cli  安装gruntjs
+grunt -v  检测是否安装成功
+npm init --yes
+cnpm install grunt --save
+cnpm install grunt-contrib-cssmin --save
+cnpm install grunt-contrib-uglify --save
