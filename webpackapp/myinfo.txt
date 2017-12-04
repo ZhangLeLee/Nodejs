@@ -1,0 +1,42 @@
+webpack -- 加载器兼打包工具, 将各种资源(javaScript/css样式/图片作为模块使用和处理)
+
+cd~
+sudo cnpm install -g webpack   全局安装webpack
+
+npm init --yes
+cnpm install webpack --save-dev  本地安装webpack
+
+新建文件webpack.config.js
+	配置入口文件
+	配置出口文件
+	配置模块信息
+		配置css样式
+		cnpm install style-loader css-loader --save-dev
+
+		es6转化为es2015
+		cnpm install babel-core babel-loader babel-preset-es2015 --save-dev
+
+		引入jquery
+		cnpm install jquery --save-dev
+
+webpack app.js bundle.js   生成配置文件 bundle.js
+
+
+
+服务器环境
+cnpm install webpack-dev-server --save-dev    配置服务器环境
+
+设置package.json文件的scripts
+	"start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
+    "build": "webpack"
+
+运行
+npm run build
+npm run start
+	npm run start运行后, 会出现localhost:8080的路径, 在改路径下运行项目, 实现监听功能
+
+
+
+
+
+附: ping baidu.com  拿到一个网站的IP
